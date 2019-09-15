@@ -1,0 +1,3 @@
+echo $SHELL
+Лђеп
+echo $0

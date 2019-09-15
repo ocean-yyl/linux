@@ -1,0 +1,2 @@
+1、安装命令:   sudo apt-get install synaptic
+2、运行程序   sudo synaptic

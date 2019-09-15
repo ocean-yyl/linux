@@ -1,0 +1,26 @@
+管道操作符【|】
+
+$cmd1 | cmd2 | cmd3
+这里组合了3个命令，cmd1的输出传递给cmd2，而cmd2的输出传递给cmd3.最终cmd3的输出被打印。
+
+实例：
+wuqing@kali:~$ls | cat -n >out
+wuqing@kali:~$ cat out
+     1	funcanshu.sh
+     2	getoptstest.sh
+     3	out
+     4	out.txt
+     5	readkeyinput.sh
+     6	test
+     7	公共
+     8	模板
+     9	视频
+    10	图片
+    11	文档
+    12	下载
+    13	音乐
+    14	桌面
+
+
+还可以使用这种子shell方式读取命令输出：
+$cmd_output=$(command)

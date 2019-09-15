@@ -1,0 +1,173 @@
+★1，条件测试：真---返回0	假---返回非0
+
+2，条件测试的语法
+①test expression(条件表达式)
+例如:
+test 1-eq 2测试是否相等
+test 'string'测试是否为空
+test -z 'string'测试是否为空
+test -e filename 测试文件是否存在
+②[ expression ]
+[是条件测试命令，]是为了增加程序可读性
+expression是参数，命令和参数之间必须保留一个空格，所以expression和左右方括号之间必须保留一个空格
+
+例如：
+test "a"="b"（没有空格）
+相当于 test "a=b"（shell将=看错一个普通的字符）
+
+3，字符串测试
+string---判断是否为空（仅限与test命令使用）
+string1 = string2---判断是否相等
+string1 != string2---是否不等
+-n string---是否非空
+-z string---是否为空
+在进行字符串比较时用“”将字符串界定起来是个好习惯。
+例如：
+a="hello"
+b='world'
+["$a" = "$b"]
+echo $?
+>1（返回1，说明$a != $b）
+
+4，在shell中，空格也是字符串本身的一部分，多一个空格也是不一样的string
+shell区分大小写
+
+5，整数测试
+语法：
+test num1 ep num2
+[ num1 op num2 ]
+运算符(替换ep)：
+-eq---是否相等(equal)
+-ne---是否不等
+-gt---是否num1>num2(big)
+-lt---是否<(little)
+-ge---是否>=
+-le---是否<=
+例如：
+x=365
+test "$x" -eq 365
+echo $?
+>0(说明$x eq 365)
+警告：不可以使用=和!=来比较整数，字符串运算符和整数运算符不可以混用
+
+6，文件测试
+语法：
+test op filename
+[ op filename ]
+操作符（存在，类型，访问权限）：
+-a---是否存在
+-b---是否存在且为块文件（以块（block）为读写单位的文件，通常读写存储芯片时以块为单位进行，例如二进制文件）
+-c---是否存在且为字符文件（可随机访问）
+-d---是否存在且为目录
+-e---同-a
+-s---文件长度是否大于0（文件是否非空）
+-f---文件存在且为常规文件（）
+-w---文件是否存在且可写
+-L---文件是否存在且为链接文件（快捷方式）
+-u---文件是否设置为suid位（用户ID: setuid用户ID，setgid组ID）
+-r---文件是否存在且可读
+-x---文件是否存在且可执行
+其他操作符：
+-nt---某个指定文件修改时间是否比另一个文件晚
+-ot---某个指定文件修改时间是否比另一个文件早
+
+7，逻辑运算符
+逻辑运算可以将多个不同的条件组合起来，构成一个多条件判断表达式
+语法：
+!expression---逻辑非
+expression1 -a expression2---逻辑与(and)
+expression1 -o expression2---逻辑或(or)
+例如：
+a=35
+test "$a" -gt 20 -a "$a" -lt 60
+echo $?
+>0(说明  $a在[20，60]区间内)
+
+8，条件判断语句
+①语法：
+if expression(expression可以是条件表达式，shell命令。0为真)
+then
+    statements
+    ~~~
+elif expression2（elif 的使用）
+then
+    statements
+    ~~~
+else（else的使用）
+    statements
+    ~~~
+fi（结束if结构★）
+②为了紧凑可以这样写:
+if expression; then(分号的作用是分隔语句)
+    statement1
+    statement2
+    ~~~
+fi
+③空命令---:(冒号)---该命令不做任何事情，但是永远返回0
+④使用&&操作符来替换if语句
+例如：
+test "$a" = "hello" && (echo '$a is hello'; exit 1)
+⑤使用exit语句退出程序
+语法：exit status（status是一个整数值，0~255）
+注意：通常每个状态码都有特定的含义，应当注意避免产生误解
+
+9，通过echo命令和重定向创建一个文件
+echo "hello world!" > ./msg.log
+
+10，多条件判断语句【case】
+case variable in
+value1)
+    statement1
+    statement2
+    ~~~
+    statement;;（相当于break;）
+value2)
+    statement1
+    statement2
+    ~~~
+    statement;;（相当于break;）
+*)（相当于defaul，若找不到value=variable）
+    statement1
+    statement2
+    ~~~
+    statement;;（相当于break;）
+esac(闭合case结构)
+
+11，运算符---------【+，-，*，/，%，**（幂运算）
+语法：
+①expr expression(不好)
+result = `expr \( 2 - 6 \) \* 12`
+需要在运算符左右两边加空格，并且运算符都需要转义字符\，expr也不能用于幂运算。
+②$((...))（推荐）
+result=$(( (1+4)*5 ))
+比较自由
+③$[...]（推荐）
+用法同②
+④let（最佳^_^）
+let n=n*2
+使用let可以执行一个或多个算术表达式，其中的变量名无需使用$符号。如果表达式中含有空格或其他特殊字符，则必须将其引用起来。例如：
+let "a = (3+2)*a"
+一般使用let都会加"".
+
+12，位运算符【<<,>>,&,|,~,^
+
+13，shell支持复合运算符【+=，-=，*=，/=,%=】【<<=,>>=,&=,|=,^=】
+自增自减：【va++,++va,--va,va--
+注意：复合运算符和自增自减针对的都是变量！因为只有变量才有赋值操作。
+
+14，数字的进制
+①表示方法：
+#十进制
+((x=20))
+#八进制
+((x=020))
+#十六进制
+((x=0x20))
+②表示方法：
+#十进制
+((x="2#20"))
+#八进制
+((x=8#20))
+#十六进制
+((x=16#20))
+

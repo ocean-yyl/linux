@@ -1,0 +1,4 @@
+1，windows默认文件编码是Unicode，而linux是utf8
+2，换行也存在差异，winndows是\r\n，而linux是\n。
+3，平台意识！！！不要轻易跨平台，尤其是codings
+4，

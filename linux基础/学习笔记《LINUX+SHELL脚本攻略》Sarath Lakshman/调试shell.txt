@@ -1,0 +1,36 @@
+1，bash内置调试脚本工具
+$bash -x test.sh
+$sh -x test.sh
+打印出所执行的每一命令以及当前状态。
+
+如果只关注脚本中某些部分的命令的调试-----：
+set -x 在执行时显示参数和命令
+set +x禁止调试
+set -v当前命令进行读取时显示输入
+set -v禁止打印输入
+
+例如：
+#!/bin/bash
+
+for i in {1..6}
+do
+set -x
+echo $i
+set +x
+done
+echo "Script executed"
+
+尽在-x和+限制的区域内，调试信息才显示。
+
+2，通过环境变量_DEBUG
+在脚本中添加
+DEBUG()
+{
+["$_DEBUG" == "on"] && $@ || :
+}
+
+执行时：
+$_DEBUF=on ./test.sh
+
+3，还可以利用shebang
+调试时把#!/bin/bash 改成#!/bin/bash -xv就行了。

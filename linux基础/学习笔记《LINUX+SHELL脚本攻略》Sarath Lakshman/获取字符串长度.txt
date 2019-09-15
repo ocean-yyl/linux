@@ -1,0 +1,2 @@
+len=${#str}
+echo "str length is $len"

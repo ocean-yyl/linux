@@ -1,0 +1,13 @@
+1,$ifconfig
+查看usb无线网卡是否已启动
+2,$lsusb
+查看usb无线网卡
+3,禁用无线网卡
+ifconfig wlan0 down
+【只有禁用无线网卡后才能更改mac地址】
+4,更改网卡地址
+$macchanger -A wlan0
+5，打开网卡
+$ifconfig wlan0 up
+6，开启wlan0的监控模式
+$airmon-ng start wlan0

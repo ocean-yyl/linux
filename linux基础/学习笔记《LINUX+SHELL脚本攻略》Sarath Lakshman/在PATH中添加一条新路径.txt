@@ -1,0 +1,10 @@
+PATH=“$PATH:/home/user/bin”
+export PATH
+
+或者使用
+export PATH=“$PATH:/home/user/bin”
+
+这样就将/home/user/bin添加到PATH中了。
+
+其他环境变量：
+HOME,PWD,USER,UID,SHELL等

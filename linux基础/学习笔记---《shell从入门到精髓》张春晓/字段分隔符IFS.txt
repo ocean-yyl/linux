@@ -1,0 +1,16 @@
+内部字段分隔符（Internal Field Separator,IFS）
+根据设定的定界符把单个数据流划分为不同数据元素。
+
+应用：迭代CSV中的单词等。
+
+实例：
+wuqing@kali:~$ data="name,sex,rollno,location"
+wuqing@kali:~$ oldIFS=$IFS【IFS保存】
+IFS=,
+wuqing@kali:~$ for item in $data; do echo Item:$item; done
+Item:name
+Item:sex
+Item:rollno
+Item:location
+wuqing@kali:~$ IFS=$oldIFS【IFS还原】
+
