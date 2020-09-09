@@ -1,0 +1,7 @@
+临时变量，指当shell窗口关闭时变量失效，通过export命令添加.这种方法添加的环境变量会立即生效，但是在窗口关闭后便会失效
+export PATH=/usr/local/bin:$PATH
+// PATH是变量名，这里是指添加到PATH这个环境变量中
+// =后面是要添加的环境变量
+// :$PATH是指把新添加的环境变量与原先的环境变量重新赋值给PATH这个变量，这里可以看出如果有多个环境变量时，应该使用:进行分隔，如
+// export PATH=/usr/local/php/bin:/usr/local/mysql/bin:$PATH
+// 当然$PATH是放在开头还是最后是没有影响的

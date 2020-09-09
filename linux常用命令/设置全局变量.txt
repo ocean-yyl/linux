@@ -1,0 +1,6 @@
+全局变量，修改/etc/profile文件，这样环境变量全局生效且不会因窗口的关闭而失效。
+vim /etc/profile
+// 如果只修改当前用户的环境变量，则是`vim ~/.bashrc`
+// 在文件的最后一行添加以下代码：
+export PATH=$PATH:/usr/local/php/bin
+// 规则和用法如第二条所说

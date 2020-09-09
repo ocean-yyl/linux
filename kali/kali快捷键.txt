@@ -1,0 +1,43 @@
+一、系统常用快捷键
+    [1] 自我增加设置
+        文件主目录->Super+E
+        "老板键"->Super+D
+        打开终端—>Super+R "gnome-terminal"
+        ntp时间校准->Shift+Super+D "ntpdate cn.pool.ntp.org"
+    
+    [2] 系统默认设置
+        复制屏幕截图到剪贴板->Ctrl+Print
+        复制窗口截图到剪贴板->Alt+Ctrl+Print
+        复制选区截图到剪贴板->Shift+Ctrl+Print
+        复制屏幕截图到Pictures目录->Print
+        复制窗口截图到Pictures目录->Alt+Print
+        复制选区截图到Pictures目录->Shift+Print
+        屏幕录像->Shift+Alt+Ctrl+R "自动保存到Videos目录"
+        切换应用程序->Super+Tab
+        窗口左分割->Super+左
+        窗口右分割->Super+右
+        窗口最大化->Super+上
+        窗口恢复->Super+下
+        显示全部应用程序->Super+A
+        显示程序概览->Super+S
+    
+
+    [3] dash docker 快捷键
+        Super+12345 "打开收藏夹对应的程序"
+
+
+二、Terminal 常用快捷键
+    新建标签页->Shift+Ctrl+T
+    关闭标签页->Shift+Ctrl+W
+    复制->Shift+Ctrl+C
+    粘贴->Shift+Ctrl+V
+    全选->Shift+Ctrl+A [自定义]
+    放大->Shift+Ctrl+'+'
+    缩小->Ctrl+'-'
+    一般大小->Ctrl+o
+    查找->Shift+Ctrl+F [自定义]
+    切换到上一个标签页面->Ctrl+pageUp
+    切换到下一个标签页面->Ctrl+pageDn
+
+
+三、VScode 常用快捷键

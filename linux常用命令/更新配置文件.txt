@@ -1,0 +1,1 @@
+/etc/profile下配置好环境变量后，执行source /etc/profile

@@ -1,5 +1,0 @@
-将一条命令的执行结果取得命令执行结果的值有：
-
-1、使用反引号`` (数字键1左边的键，tab键上面，英文方式输入) 如：a=`echo "hello world"`;即将命令 echo "hello world"的输出赋给变量a
-
-2、可以使用 $(())，如：a=$(echo "hello world")，即将命令echo "hello world"的输出赋给变量a。

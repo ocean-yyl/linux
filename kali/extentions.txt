@@ -1,0 +1,31 @@
+1,Dash to Dock      kali默认自带的，编辑下边的收藏夹快速访问栏
+
+2,Bing Wallpaper Changer    必应壁纸图片，壁纸更新跟随必应
+
+3,Simple net speed      网速显示
+
+4,Clipboard Indicator       剪切板，提供多个曾经复制至剪贴板的全部历史记录
+
+5,Recent Items      快速访问最近打开过的文件[用处不大]
+
+6,Places Status Indicator       kali默认自带的，快速访问文件夹位置
+
+7,Easy Screen Cast      kali默认自带的，在 GNOME 桌面中进行视频/音频截取
+
+8,Wikipedia Search Provider         WIKi百科快速查询
+
+9,Text Translator       快速翻译工具
+    快捷键：
+        Super+T 打开翻译工具
+        Shift+Super+T 翻译剪贴板内容
+        Alt+Super+T 翻译鼠标选中内容
+
+10,Show IP      Show IP addresses (private or public) in gnome-shell bar
+
+11,Lunar Calendar 农历          在日期中显示中国的农历日期
+
+12,Auto GIT         Automatic update source code to GitHub.com
+
+13,Workspaces to Dock           kali默认自带的，工作区侧边栏显示与管理 
+
+14,alacarte “左上角应用程序显示列表编辑” apt-get install alacarte
