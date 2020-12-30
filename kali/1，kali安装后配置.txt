@@ -1,53 +1,15 @@
-1，配置更新源镜像。
-2，（可选）系统更新
-3，（虚拟机）安装VMtool
-4，安装中文输入法，切换默认输入法【ctrl + space】
-
-
-
-【1】
-leafpad /etc/apt/sources.list
-
-#kali官方源
-    deb http://http.kali.org/kali kali-rolling main non-free contrib
-    #中科大的源
-    deb http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib
-    deb http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free
-    deb-src http://mirrors.ustc.edu.cn/kali kali-rolling main contrib non-free
-    deb http://mirrors.ustc.edu.cn/kali-security kali-current/updates main contrib non-free
-    deb-src http://mirrors.ustc.edu.cn/kali-security kali-current/updates main contrib non-free
-    #阿里云源
-    deb http://mirrors.aliyun.com/kali kali-rolling main non-free contrib
-    deb http://mirrors.aliyun.com/kali-security/ kali-rolling main contrib non-free
-    deb-src http://mirrors.aliyun.com/kali-security/ kali-rolling main contrib non-free
-
-【2】
+【1更新】
 apt-get update
-
 apt-get upgrade
-
 apt-get dist-upgrade
-
 apt-get clean
 
+【2切换语言设置vmware镜像】
+echo LANG="zh_CN.UTF-8" > /etc/default/locale
 
-【3】
-百度
+【3安装中文输入法】
+apt-get install ibus ibus-pinyin
 
-【4】
-一、打开kali系统中的火狐浏览器，下载linux版本的搜狗拼音输入法：
-官方地址：http://pinyin.sogou.com/linux/
-
-二、解压
-dpkg -i sogoupinyin_2.1.0.0086_amd64.deb
-
-若出错：
-安装依赖包：libopencc2
-apt-get install libopencc2
-有未能满足的依赖关系，请尝试不指明软件包的名字来运行：
-apt --fix-broken install
-再重新执行解压
-dpkg -i sogoupinyin_2.1.0.0086_amd64.deb
-安装成功，重启系统
-
-【ctrl+space】切换输入法
+【4安装chrome浏览器】
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
