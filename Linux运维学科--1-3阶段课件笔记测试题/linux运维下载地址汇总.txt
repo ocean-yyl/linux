@@ -1,0 +1,35 @@
+﻿Linux系统管理阶段软件下载地址：
+链接：https://pan.baidu.com/s/1HF8WH85MHFZq5lJ-My4Y9A
+提取码：q5mp
+
+Linux网络服务管理阶段软件下载地址：
+链接：https://pan.baidu.com/s/1HF8WH85MHFZq5lJ-My4Y9A
+提取码：q5mp
+
+集群管理阶段软件下载地址：
+链接：https://pan.baidu.com/s/1HF8WH85MHFZq5lJ-My4Y9A
+提取码：q5mp
+
+虚拟化阶段软件下载地址：
+链接：https://pan.baidu.com/s/1HF8WH85MHFZq5lJ-My4Y9A
+提取码：q5mp
+
+CentOS 6 & 7 版本镜像下载地址（官方地址，速度较慢）：
+CentOS 6.8版本：
+	网页地址：http://vault.centos.org/6.8/isos/x86_64/
+	种子地址：http://vault.centos.org/6.8/isos/x86_64/CentOS-6.8-x86_64-bin-DVD1to2.torrent
+CentOS 7.5版本：
+	网页地址：http://vault.centos.org/7.5.1804/isos/x86_64/
+	种子地址：http://vault.centos.org/7.5.1804/isos/x86_64/CentOS-7-x86_64-Everything-1804.torrent
+
+CentOS 5 & 6 & 7 网络yum源配置文件地址：
+	网页地址：http://mirrors.163.com/.help/centos.html
+
+
+
+
+
+
+
+
+
